@@ -26,7 +26,7 @@ You should make sure you have the following installed:
 - VS Code: https://code.visualstudio.com/ This is the code editor the we'll be using.
 
 
-### Clone This Repo and Build the Docker Containers (Terminal)
+### Clone this repo and build the containers (Terminal)
 Once you have those things installed, open up a terminal and clone this repo...
 ```bash
 git clone git@github.com:cdcarson/lamp-docker-vscode.git
@@ -45,10 +45,10 @@ Build the containers...
 ```bash
 docker-compose up -d
 # You'll see a whole bunch of stuff going on here.
-# It'll take some time to complete. Sit back and relax.
+# It may take some time to complete. Sit back and relax.
 ```
 
-The first time you run `docker-compose up` it will take a significant amount of time (like 5 or 10 minutes) to complete. Docker is downloading and compiling a whole bunch of source code. Don't worry -- the next time it'll only take a few seconds. You should see something like this at the end:
+The first time you run `docker-compose up` it may take a significant amount of time (like 5 or 10 minutes) to complete. Docker is downloading and compiling a whole bunch of source code. Don't worry -- the next time it'll only take a few seconds. You should see something like this at the end:
 
 ```bash
 Creating lamp-dev-database ... done
@@ -57,15 +57,21 @@ Creating lamp-dev-php73      ... done
 Creating lamp-dev-phpmyadmin ... done
 ```
 
-Open up Docker Desktop. You should see the app running:
+### Make sure everything's good
+Open up Docker Desktop. You should see the `lamp-dev` app running:
+
 ![Docker Desktop after docker-compose up -d](docs/img/docker-desktop-after-start.png)
+
+Go to http://localhost:3100/. You should see a "Hello World" web page:
+
+![The Web Page](docs/img/the-web-page.png)
 
 
 
 
 ### Start VS Code and Reopen the Project as a Dev Container
 
-Start VS Code. Open the `code-2-college-elite-102-php` folder.  `File -> Open Workspace...`.
+Start VS Code. Open the `lamp-docker-vscode` folder.  `File -> Open Workspace...`.
 
 If you do not already have the "Remote - Containers" VS Code plugin installed, you'll be prompted to install it:
 
