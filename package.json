@@ -1,0 +1,23 @@
+{
+  "name": "c2c-elite-102",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sprintcube/docker-compose-lamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sprintcube/docker-compose-lamp/issues"
+  },
+  "homepage": "https://github.com/sprintcube/docker-compose-lamp#readme",
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.16.2",
+    "prettier": "^2.2.1"
+  }
+}

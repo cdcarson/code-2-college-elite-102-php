@@ -87,6 +87,11 @@ libpng-dev && \
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd
 
+# Node and NPM
+RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
+  apt-get install -y nodejs
+
+
 # Enable apache modules
 RUN a2enmod rewrite headers
 
