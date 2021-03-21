@@ -1,4 +1,4 @@
-#  Docker Compose LAMP stack with VS Code Remote Container Support
+#  Docker LAMP Stack with VS Code Remote Container Support
 
 Notes: this stack is for **educational and development purposes only**  -- it's not intended for production deployments. Forked and modified from https://github.com/sprintcube/docker-compose-lamp.
 
@@ -12,32 +12,56 @@ It consists of the following:
 - MySQL (a relational database)
 - phpMyAdmin (an admin app for looking at what's in your MySQL database)
 - Redis (an in-memory data store/cache)
-- Node (for assset building.)
+- Node (for js/css asset building)
 
 ##  Installation
  
 ### Prerequisites
 
-You should figure out how to open a Terminal 
-You should have the following installed on your local machine:
+You should know how to open a Terminal on your OS. In Mac this app is called "Terminal."
+
+You should make sure you have the following installed:
  - git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git This will allow us to push and pull from GitHub.
-- Docker Desktop: https://www.docker.com/products/docker-desktop This is the program that installs and runs the "containers" for our local dev environment: PHP, Apache, MySQL and so on.
+- Docker Desktop: https://www.docker.com/products/docker-desktop This is the program that installs and runs the "containers" for our local dev environment: PHP, Apache, MySQL and so on. Each container is a "virtual" machine running Linux. Whats the point? Rather than each developer installing PHP, Apache, MySQL, etc. on their own local machine, everybody shares a stable, reproducible environment across operating systems and machines.
 - VS Code: https://code.visualstudio.com/ This is the code editor the we'll be using.
 
-### Clone This Repo and Build the Containers (Terminal)
+
+### Clone This Repo and Build the Docker Containers (Terminal)
 Once you have those things installed, open up a terminal and clone this repo...
 ```bash
-git clone git@github.com:cdcarson/code-2-college-elite-102-php.git
+git clone git@github.com:cdcarson/lamp-docker-vscode.git
 ```
 `cd` into the directory...
 ```bash 
-cd code-2-college-elite-102-php
+cd lamp-docker-vscode
 ```
 
 Copy `sample.env` to `.env`...
 ```bash 
 cp sample.env .env
 ```
+
+Build the containers...
+```bash
+docker-compose up -d
+# You'll see a whole bunch of stuff going on here.
+# It'll take some time to complete. Sit back and relax.
+```
+
+The first time you run `docker-compose up` it will take a significant amount of time (like 5 or 10 minutes) to complete. Docker is downloading and compiling a whole bunch of source code. Don't worry -- the next time it'll only take a few seconds. You should see something like this at the end:
+
+```bash
+Creating lamp-dev-database ... done
+Creating lamp-dev-redis    ... done
+Creating lamp-dev-php73      ... done
+Creating lamp-dev-phpmyadmin ... done
+```
+
+Open up Docker Desktop. You should see the app running:
+![Docker Desktop after docker-compose up -d](docs/img/docker-desktop-after-start.png)
+
+
+
 
 ### Start VS Code and Reopen the Project as a Dev Container
 
