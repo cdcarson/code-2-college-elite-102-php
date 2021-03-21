@@ -1,44 +1,64 @@
-#  LAMP stack built with Docker Compose
+#  Docker Compose LAMP stack with VS Code Remote Container Support
 
-  
+Notes: this stack is for **educational and development purposes only**  -- it's not intended for production deployments. Forked and modified from https://github.com/sprintcube/docker-compose-lamp.
 
-![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
 
-  
+A basic LAMP stack environment built using Docker Compose, intended to be used with VS Code Remote Containers. 
 
-A basic LAMP stack environment built using Docker Compose. It consists of the following:
+It consists of the following:
 
-* PHP
-* Apache
-* MySQL
-* phpMyAdmin
-* Redis
+- PHP
+- Apache (a web server)
+- MySQL (a relational database)
+- phpMyAdmin (an admin app for looking at what's in your MySQL database)
+- Redis (an in-memory data store/cache)
+- Node (for assset building.)
 
-As of now, we have several different PHP versions. Use appropriate php version as needed:
-
-* 5.4.x
-* 5.6.x
-* 7.1.x
-* 7.2.x
-* 7.3.x
-* 7.4.x
-* 8.0.x
-
-> Please note that we simplified the project structure from several branches for each php version, to one centralized master branch. Please let us know if you encouter any problems. 
 ##  Installation
  
-* Clone this repository on your local computer
-* configure .env as needed 
-* Run the `docker-compose up -d`.
+### Prerequisites
 
-```shell
-git clone https://github.com/sprintcube/docker-compose-lamp.git
-cd docker-compose-lamp/
-cp sample.env .env
-// modify sample.env as needed
-docker-compose up -d
-// visit localhost
+You should figure out how to open a Terminal 
+You should have the following installed on your local machine:
+ - git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git This will allow us to push and pull from GitHub.
+- Docker Desktop: https://www.docker.com/products/docker-desktop This is the program that installs and runs the "containers" for our local dev environment: PHP, Apache, MySQL and so on.
+- VS Code: https://code.visualstudio.com/ This is the code editor the we'll be using.
+
+### Clone This Repo and Build the Containers (Terminal)
+Once you have those things installed, open up a terminal and clone this repo...
+```bash
+git clone git@github.com:cdcarson/code-2-college-elite-102-php.git
 ```
+`cd` into the directory...
+```bash 
+cd code-2-college-elite-102-php
+```
+
+Copy `sample.env` to `.env`...
+```bash 
+cp sample.env .env
+```
+
+### Start VS Code and Reopen the Project as a Dev Container
+
+Start VS Code. Open the `code-2-college-elite-102-php` folder.  `File -> Open Workspace...`.
+
+If you do not already have the "Remote - Containers" VS Code plugin installed, you'll be prompted to install it:
+
+![Install Prompt](docs/img/recommended-extensions-prompt.png)
+
+Go ahead and click "Install."
+
+You will then see a prompt to reopen the workspace in a dev container:
+
+![Reopen in Container Prompt](docs/img/reopen-in-container.png)
+
+Click "Reopen in Container." If you don's see this prompt, you can always open in via the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette). Select "Reopen in Container":
+
+![Reopen in Container from Command Pallete](docs/img/Reopen-in-container-command.png)
+
+### Wait for the containers to build.
+
 
 Your LAMP stack is now ready!! You can access it via `http://localhost`.
 

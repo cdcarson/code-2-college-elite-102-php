@@ -1,6 +1,6 @@
 FROM php:7.3-apache-stretch
 
-# Surpresses debconf complaints of trying to install apt packages interactively
+# Supresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
  
 ARG DEBIAN_FRONTEND=noninteractive
@@ -48,6 +48,10 @@ RUN apt-get -y update && \
     rm -rf /var/lib/apt/lists/* && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     docker-php-ext-install -j$(nproc) gd
+
+# Node and NPM
+RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
+  apt-get install -y nodejs
 
 # Enable apache modules
 RUN a2enmod rewrite headers
