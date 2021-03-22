@@ -93,17 +93,17 @@ Start VS Code. Open the `lamp-docker-vscode` folder.  `File -> Open Workspace...
 
 If you do not already have the "Remote - Containers" VS Code extension installed, you'll be prompted to install it:
 
-![Install Prompt](docs/img/recommended-extensions-prompt.png|width=200)
+![Install Prompt](docs/img/recommended-extensions-prompt.png)
 
 Go ahead and click "Install." (If you don't see this prompt, you can always install the  "Remote - Containers" extension from `View -> Extensions`.)
 
 You will then be prompted to reopen the workspace in a dev container:
 
-![Reopen in Container Prompt](docs/img/reopen-in-container.png|width=200)
+![Reopen in Container Prompt](docs/img/reopen-in-container.png)
 
 Click "Reopen in Container." If you don't see this prompt, you can always open in via the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette). Select "Reopen in Container":
 
-![Reopen in Container from Command Pallete](docs/img/Reopen-in-container-command.png|width=200)
+![Reopen in Container from Command Pallete](docs/img/Reopen-in-container-command.png)
 
 If you've followed the steps above (i.e. running `docker-compose up` from the command line) it should only take a few seconds for the containers to boot. If not, it may take a few minutes to download and compile the source code.
 
